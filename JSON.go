@@ -414,6 +414,8 @@ type BlockHeaderAndCoinbase struct {
 	PreviousBlockHash string           `json:"previousblockhash"`
 	NextBlockHash     string           `json:"nextblockhash"`
 	Tx                []RawTransaction `json:"tx"`
+	NTx               uint64           `json:"nTx"`
+	Fee               float32          `json:"fee,omitempty"`
 }
 
 type BlockStats struct {
@@ -474,6 +476,7 @@ type RawTransaction struct {
 	Time          int64   `json:"time,omitempty"`
 	Blocktime     int64   `json:"blocktime,omitempty"`
 	BlockHeight   uint64  `json:"blockheight,omitempty"`
+	Fee           float32 `json:"fee,omitempty"`
 }
 
 // Vout represent an OUT value
@@ -490,6 +493,16 @@ type Vin struct {
 	Vout      uint64    `json:"vout"`
 	ScriptSig ScriptSig `json:"scriptSig"`
 	Sequence  uint32    `json:"sequence"`
+
+	Prevout uint64 `json:"prevout,omitempty"`
+}
+
+// Prevout for Vin
+type Prevout struct {
+	Generated    bool         `json:"generated"`
+	Height       uint64       `json:"height"`
+	Value        float32      `json:"value"`
+	ScriptPubKey ScriptPubKey `json:"scriptPubKey"`
 }
 
 // OpReturn comment
