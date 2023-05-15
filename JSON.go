@@ -494,7 +494,7 @@ type Vin struct {
 	ScriptSig ScriptSig `json:"scriptSig"`
 	Sequence  uint32    `json:"sequence"`
 
-	Prevout uint64 `json:"prevout,omitempty"`
+	Prevout Prevout `json:"prevout,omitempty"`
 }
 
 // Prevout for Vin
