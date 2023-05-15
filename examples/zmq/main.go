@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/ordishs/go-bitcoin"
+	"github.com/prompt-cash/go-bitcoin"
 )
 
 func main() {

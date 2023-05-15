@@ -1,4 +1,4 @@
-module github.com/ordishs/go-bitcoin
+module github.com/prompt-cash/go-bitcoin
 
 go 1.17
 
